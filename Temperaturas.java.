@@ -1,0 +1,29 @@
+// Declaramos la clase principal llamada Temperaturas
+public class Temperaturas {
+
+    // Función que calcula el promedio de las temperaturas de una ciudad
+    public static double calcularPromedio(int[] temperaturas) {
+        int suma = 0; // Variable para acumular la suma de las temperaturas
+        for (int temp : temperaturas) { // Recorremos todas las temperaturas
+            suma += temp; // Sumamos cada valor a la variable suma
+        }
+        return (double) suma / temperaturas.length; // Retornamos el promedio
+    }
+
+    // Método principal donde empieza la ejecución del programa
+    public static void main(String[] args) {
+        // Creamos una matriz con las temperaturas de 3 ciudades durante 4 semanas
+        int[][] datos = {
+            {30, 32, 31, 29}, // Ciudad 1
+            {25, 26, 24, 25}, // Ciudad 2
+            {20, 19, 21, 19}  // Ciudad 3
+        };
+
+        // Recorremos cada ciudad para calcular su promedio
+        for (int i = 0; i < datos.length; i++) {
+            double promedio = calcularPromedio(datos[i]); // Llamamos a la función
+            // Mostramos el resultado en pantalla
+            System.out.println("El promedio de la Ciudad " + (i + 1) + " es: " + promedio);
+        }
+    }
+}
